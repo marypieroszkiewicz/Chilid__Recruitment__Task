@@ -1,0 +1,363 @@
+/* ---------------------------------------------------- */
+/* ----- HEADER ----- */
+/* ---------------------------------------------------- */
+
+.slider {
+  background-size: cover;
+  position: relative;
+
+  &__slide {
+    position: relative;
+
+    &__title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      transform: translateY(60px);
+      font-size: 2.125rem;
+      font-weight: 900;
+
+      @media #{$tablet__768} {
+        font-size: 4.25rem;
+        transform: translateY(71px);
+      }
+
+      @media #{$desktop__1024} {
+        transform: translateY(120px);
+      }
+    }
+
+    &__img {
+      width: 100vw;
+      height: 128.4375vw;
+      object-fit: cover;
+
+      @media #{$tablet__768} {
+        height: 66.927vw;
+      }
+
+      @media #{$desktop__1024} {
+        height: 100%;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    transform: translateY(-45px);
+    bottom: 0;
+
+    @media #{$tablet__768} {
+      flex-direction: row;
+      justify-content: space-around;
+      transform: translateY(-50px);
+    }
+
+    @media #{$desktop__1024} {
+      margin-left: 40px;
+      transform: translateY(-98px);
+    }
+  }
+}
+
+.rwd--break {
+  display: block;
+
+  @media #{$desktop__1024} {
+    display: none;
+  }
+}
+
+.slider-arrow {
+  display: inline-flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  justify-content: space-around;
+  color: $slider-arrow--color;
+  font-size: 2rem;
+  z-index: 1;
+
+  @media #{$tablet__768} {
+    font-size: 3rem;
+  }
+
+  &--left {
+    left: 10px;
+
+    @media #{$tablet__768} {
+      left: 20px;
+    }
+    @media #{$large__screens__1170} {
+      left: 30px;
+    }
+  }
+
+  &--right {
+    right: 10px;
+
+    @media #{$tablet__768} {
+      right: 20px;
+    }
+
+    @media #{$large__screens__1170} {
+      right: 30px;
+    }
+  }
+}
+
+.slide__btn {
+  width: 231px;
+  height: 38px;
+  border: none;
+  color: $slide__btn--color;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+  @media #{$tablet__768} {
+    margin-bottom: 0;
+  }
+
+  &__img {
+    display: none;
+
+    @media #{$tablet__768} {
+      display: block;
+      position: absolute;
+      transform: translateY(-91px);
+      padding-left: 75px;
+    }
+
+    @media #{$desktop__1024} {
+      padding: 0;
+      margin-left: -81px;
+      transform: translateY(-29px);
+    }
+  }
+}
+
+// maps slider-buttons
+$button-colors: (
+  1: $slide__btn--1--background,
+  2: $slide__btn--2--background,
+  3: $slide__btn--3--background
+);
+
+@each $color-name, $color-code in $button-colors {
+  .slide__btn--#{$color-name} {
+    background-color: $color-code;
+  }
+}
+// end of maps slider-buttons
+
+.navigation-container {
+  position: sticky;
+  top: 0;
+  background-color: $navigation-container--background;
+  z-index: 3;
+}
+
+.logo {
+  width: 45%;
+  padding-left: 10px;
+
+  @media #{$tablet__768} {
+    width: 25%;
+  }
+
+  @media #{$desktop__1024} {
+    width: 19.59%;
+  }
+
+  @media #{$large__screens__1170} {
+    width: 16.985%;
+  }
+}
+
+.btn-toggle {
+  position: absolute;
+  top: 8px;
+  right: 0;
+
+  @media #{$tablet__768} {
+    top: 15px;
+    right: 15px;
+  }
+
+  @media #{$desktop__1024} {
+    display: none;
+  }
+}
+
+.hamburger-container {
+  padding: 0.5625rem 0.625rem;
+  border-radius: 4px;
+}
+
+.hamburger {
+  width: 22px;
+  height: 14px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+
+  &__line {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: $hamburger__line--background;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+
+    &:nth-child(1) {
+      top: 0px;
+    }
+
+    &:nth-child(2) {
+      @extend %hamburger__line--nth;
+    }
+
+    &:nth-child(3) {
+      @extend %hamburger__line--nth;
+    }
+
+    &:nth-child(4) {
+      top: 12px;
+    }
+  }
+}
+
+.btn-toggle--toggled {
+  .hamburger__line:nth-child(1) {
+    top: 6px;
+    width: 0%;
+    left: 50%;
+  }
+
+  .hamburger__line:nth-child(2) {
+    transform: rotate(45deg);
+    background-color: #ef0060;
+  }
+
+  .hamburger__line:nth-child(3) {
+    transform: rotate(-45deg);
+    background-color: #ef0060;
+  }
+
+  .hamburger__line:nth-child(4) {
+    top: 6px;
+    width: 0%;
+    left: 50%;
+  }
+}
+
+.nav-menu {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.5s max-height;
+
+  @media #{$desktop__1024} {
+    max-height: 100%;
+    transition: none;
+    transition-duration: 0s;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .menu--show & {
+    max-height: 360px;
+    overflow-y: auto;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+
+  @media #{$desktop__1024} {
+    flex-direction: row;
+    position: absolute;
+    top: -11px;
+    right: 0;
+    border-bottom: 5px solid #b0b0b0;
+  }
+
+  &__link {
+    display: block;
+    padding: 0.625rem 0.9375rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #626262;
+    transition: all 0.2s ease;
+    font-weight: 800;
+    position: relative;
+
+    @media #{$desktop__1024} {
+      display: block;
+      padding: 1.875rem 0.9375rem;
+    }
+
+    &:hover {
+      color: $menu__link--color;
+    }
+  }
+
+  &__item {
+    &.active > {
+      .menu__link {
+        color: $menu__link--color;
+      }
+    }
+  }
+}
+
+// maps menu
+$menu-colors: (
+  1: $anzac,
+  2: $flush-mahogany,
+  3: $spring-leaves,
+  4: $wedgewood,
+  5: $blue-violet
+);
+
+@each $key, $color in $menu-colors {
+  .menu__item:nth-of-type(#{$key}) {
+    background-color: $color;
+  }
+}
+
+$menu-colors--hover-active: (
+  1: $menu__item-1--background,
+  2: $menu__item-2--background,
+  3: $menu__item-3--background,
+  4: $menu__item-4--background,
+  5: $menu__item-5--background
+);
+
+@each $key, $color in $menu-colors--hover-active {
+  .menu__item:hover:nth-of-type(#{$key}) {
+    background-color: $color;
+  }
+}
+
+@each $key, $color in $menu-colors--hover-active {
+  .menu__item.active:nth-of-type(#{$key}) {
+    background-color: $color;
+  }
+}
+// end of maps menu

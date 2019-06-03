@@ -1,0 +1,45 @@
+// ----------------------------------------------------
+// ----- MIXINS -----
+// ----------------------------------------------------
+
+// --- Clearfix ---
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// ----- End Of Clearfix -----
+
+@mixin tabs__element--1 {
+  top: 0;
+  border-bottom: none;
+  transform: translateY(1px);
+}
+
+@mixin tabs__element--2 {
+  bottom: 0;
+  transform: translateY(-1px);
+}
+
+@mixin grayscale__box-before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 199px;
+  background-color: $grayscale__box--background-before;
+}
+
+@mixin grayscale__box-after {
+  content: "\00bb";
+  position: absolute;
+  font-size: 9.375rem;
+  font-weight: 300;
+  color: $grayscale__box--color;
+  cursor: pointer;
+  z-index: 3;
+}
+
+// ----- END OF MIXINS -----;;

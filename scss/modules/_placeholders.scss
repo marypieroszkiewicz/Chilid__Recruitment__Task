@@ -1,0 +1,15 @@
+// ----------------------------------------------------
+// ----- PLACEHOLDERS -----
+// ----------------------------------------------------
+
+%hamburger__line--nth {
+  top: 6px;
+}
+
+@media #{$tablet__768} {
+  %tabs__el-is-active-tabs__el--3-4 {
+    background-color: $tabs__el--background-bottom;
+  }
+}
+
+// ----- END OF PLACEHOLDERS -----
