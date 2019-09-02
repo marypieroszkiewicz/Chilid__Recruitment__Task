@@ -160,6 +160,7 @@ $button-colors: (
 
 .navigation-container {
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
   background-color: $navigation-container--background;
   z-index: 3;
