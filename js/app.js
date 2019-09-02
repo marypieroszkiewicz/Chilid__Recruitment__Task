@@ -4,47 +4,51 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ----- SLIDER (SLIDESHOW) IMAGES ----- */
   /* ---------------------------------------------------- */
 
-  let slideIndex = 0;
+  function slider() {
 
-  function showSlide(index) {
-    let slides = document.querySelectorAll('.slider__slide');
+    let slideIndex = 0;
 
-    if (index >= slides.length) {
-      slideIndex = 0;
-    } else if (index < 0) {
-      slideIndex = slides.length - 1;
+    function showSlide(index) {
+      const slides = document.querySelectorAll('.slider__slide');
+
+      if (index >= slides.length) {
+        slideIndex = 0;
+      } else if (index < 0) {
+        slideIndex = slides.length - 1;
+      }
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+      }
+
+      slides[slideIndex].style.display = 'block';
     }
 
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = 'none';
-    }
+    showSlide(slideIndex);
 
-    slides[slideIndex].style.display = 'block';
+    setInterval(() => {
+      showSlide(++slideIndex)
+    }, 4000);
+
+    document.querySelector('.arrow-prev-js').addEventListener('click', () => {
+      showSlide(--slideIndex);
+    });
+
+
+    document.querySelector('.arrow-next-js').addEventListener('click', () => {
+      showSlide(++slideIndex);
+    });
+
+    document.querySelectorAll('.slide__btn').forEach((element) => {
+      element.addEventListener('click', function () {
+        let btns = Array.prototype.slice.call(this.parentElement.children);
+        let btnIndex = btns.indexOf(element);
+        showSlide(slideIndex = btnIndex);
+      })
+    });
   }
 
-  showSlide(slideIndex);
-
-  setInterval(() => {
-    showSlide(++slideIndex)
-  }, 4000);
-
-  document.querySelector('.arrow-prev-js').addEventListener('click', () => {
-    showSlide(--slideIndex);
-  });
-
-
-  document.querySelector('.arrow-next-js').addEventListener('click', () => {
-    showSlide(++slideIndex);
-  });
-
-  document.querySelectorAll('.slide__btn').forEach((element) => {
-    element.addEventListener('click', function () {
-      let btns = Array.prototype.slice.call(this.parentElement.children);
-      let btnIndex = btns.indexOf(element);
-      showSlide(slideIndex = btnIndex);
-    })
-  });
-
+  slider();
 
   /* ---------------------------------------------------- */
   /* ----- HIGHLIGHT CURRENT PAGE ACTIVE MENU ITEM ----- */

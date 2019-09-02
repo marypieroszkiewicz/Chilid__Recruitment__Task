@@ -65,8 +65,8 @@ $list-content__box__item--color: $black;
 $list-content__box__item--border-bottom: $eastern-blue;
 
 // --- Media Queries ---
-$tablet__768: "only screen and (min-width: 768px)";
-$desktop__1024: "only screen and (min-width: 1024px)";
-$large__screens__1170: "only screen and (min-width: 1170px)";
+$tablet__768: "(min-width: 768px)";
+$desktop__1024: "(min-width: 1024px)";
+$large__screens__1170: "(min-width: 1170px)";
 
 // ----- END OF VARIABLES -----

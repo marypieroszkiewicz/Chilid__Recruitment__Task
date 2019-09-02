@@ -125,6 +125,59 @@ $gallery-colors: (
         height: 439px;
       }
 
+      &:hover {
+        & .gallery-box__content-octagon {
+          clip-path: circle(50% at 50% 50%);
+          -webkit-clip-path: circle(50% at 50% 50%);
+
+          & ~ .gallery-box__content-thumb {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+            cursor: pointer;
+          }
+        }
+
+        @media #{$tablet__768} {
+          & .gallery-box__content-octagon {
+            -webkit-clip-path: circle(30% at 25% 50%);
+            clip-path: circle(30% at 25% 50%);
+            position: relative;
+
+            & ~ .gallery-box__content-thumb {
+              left: 75%;
+            }
+          }
+
+          & .gallery-box__content-octagon__img-move {
+            position: absolute;
+            transform: translateX(-90px);
+          }
+        }
+
+        @media #{$desktop__1024} {
+          & .gallery-box__content-octagon {
+            -webkit-clip-path: circle(29.1% at 50% 30%);
+            clip-path: circle(29.1% at 50% 30%);
+
+            & ~ .gallery-box__content-thumb {
+              left: 50%;
+              top: auto;
+              bottom: 10%;
+            }
+          }
+
+          & .gallery-box__content-octagon__img-move {
+            position: absolute;
+            transform: translateX(0px);
+          }
+        }
+      }
+
       &-octagon {
         width: 100%;
         height: 100%;
@@ -174,10 +227,6 @@ $gallery-colors: (
             0 92%,
             0 8%
           );
-          &__img-move:hover {
-            position: absolute;
-            left: -90px;
-          }
         }
 
         @media #{$desktop__1024} {
@@ -201,45 +250,6 @@ $gallery-colors: (
             0 94%,
             0 6%
           );
-
-          &__img-move:hover {
-            left: 0;
-          }
-        }
-
-        &:hover {
-          clip-path: circle(50% at 50% 50%);
-          -webkit-clip-path: circle(50% at 50% 50%);
-
-          @media #{$tablet__768} {
-            -webkit-clip-path: circle(30% at 25% 50%);
-            clip-path: circle(30% at 25% 50%);
-          }
-
-          @media #{$desktop__1024} {
-            -webkit-clip-path: circle(29.1% at 50% 30%);
-            clip-path: circle(29.1% at 50% 30%);
-          }
-
-          & ~ .gallery-box__content-thumb {
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 2;
-
-            @media #{$tablet__768} {
-              left: 75%;
-            }
-
-            @media #{$desktop__1024} {
-              left: 50%;
-              top: auto;
-              bottom: 10%;
-            }
-          }
         }
       }
 
