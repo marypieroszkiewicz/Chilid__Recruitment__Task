@@ -76,7 +76,7 @@ $gallery-colors: (
 );
 
 @each $color-name, $color-code in $gallery-colors {
-  .gallery-box__content-thumb__title--#{$color-name} {
+  .gallery-box__content-thumb--#{$color-name} {
     color: $color-code;
   }
 }
