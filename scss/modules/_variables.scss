@@ -1,0 +1,72 @@
+// ----------------------------------------------------
+// ----- VARIABLES -----
+// ----------------------------------------------------
+
+// --- Font ---
+$font-base: "Lato", sans-serif;
+
+// --- Colors ---
+$white: #fff;
+$black: #000;
+$seashell: #f1f1f1;
+$rose: #ef0060;
+$dove-gray: #626262;
+$silver-chalice: #b0b0b0;
+$anzac: #dfbb42;
+$flush-mahogany: #c43434;
+$spring-leaves: #508b61;
+$wedgewood: #428e9e;
+$blue-violet: #575fbd;
+$concrete: #f3f3f3;
+$polo-blue: #8393ca;
+$hit-pink: #faad81;
+$moss-green: #a3d49c;
+$french-lilac: #e5b6e7;
+$seagull: #7ec8ea;
+$eastern-blue: #1883b4;
+$mine-shaft: #333;
+
+$slider__slide__title--color: $black;
+$slider-arrow--color: $white;
+$slide__btn--1--background: rgba($flush-mahogany, 0.7);
+$slide__btn--2--background: rgba($wedgewood, 0.7);
+$slide__btn--3--background: rgba($spring-leaves, 0.7);
+$slide__btn--color: $white;
+
+$navigation-container--background: $white;
+$hamburger__line--background: $mine-shaft;
+$hamburger__line--toggled--background: $rose;
+$menu--border-color: $silver-chalice;
+
+$menu__item-1--background: rgba($anzac, 0.8);
+$menu__item-2--background: rgba($flush-mahogany, 0.8);
+$menu__item-3--background: rgba($spring-leaves, 0.8);
+$menu__item-4--background: rgba($wedgewood, 0.8);
+$menu__item-5--background: rgba($blue-violet, 0.8);
+$menu__link--color: $white;
+
+$main--background: $seashell;
+
+$tab-content--background: $white;
+$tabs__el--background-top: $white;
+$tabs__el--background-bottom: $concrete;
+$tabs__el--background-is-active: $white;
+$tabs__el--color: $white;
+$tabs__link-color: $white;
+
+$gallery__box--background: $white;
+$gallery-box__content-thumb__title--bg: rgba($white, 0.7);
+
+$grayscale__box--background-before: rgba($white, 0.7);
+$grayscale__box--color: $mine-shaft;
+
+$list-content__title--background: $seagull;
+$list-content__box__item--color: $black;
+$list-content__box__item--border-bottom: $eastern-blue;
+
+// --- Media Queries ---
+$tablet__768: "(min-width: 768px)";
+$desktop__1024: "(min-width: 1024px)";
+$large__screens__1170: "(min-width: 1170px)";
+
+// ----- END OF VARIABLES -----
